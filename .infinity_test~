@@ -1,0 +1,6 @@
+infinity_test do
+	use :test_framework => :rspec
+	use :app_framework => :rails
+	notifications :lib_notify
+end
+
