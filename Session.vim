@@ -136,7 +136,6 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set tabstop=3
 set timeoutlen=250
 set updatetime=500
-set window=44
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -146,22 +145,29 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
 endif
 set shortmess=aoO
 badd +18 Gemfile
-badd +242 ~/Dropbox/dev-ror/rails-notes.rb
+badd +249 ~/Dropbox/dev-ror/rails-notes.rb
 badd +55 config/database.yml
 badd +7 config/routes.rb
 badd +16 app/controllers/pages_controller.rb
-badd +1 app/views/pages/home.html.erb
-badd +472 ~/Dropbox/dev-ror/ruby-language-notes.rb
+badd +3 app/views/pages/home.html.erb
+badd +64 ~/Dropbox/dev-ror/ruby-language-notes.rb
 badd +2 .infinity_test
 badd +57 spec/controllers/pages_controller_spec.rb
 badd +2 spec/spec_helper.rb
 badd +5 app/views/pages/about.html.erb
-badd +7 app/views/layouts/application.html.erb
+badd +14 app/views/layouts/application.html.erb
 badd +5 app/views/pages/contact.html.erb
 badd +1 app/views/pages/help.html.erb
-badd +13 app/helpers/application_helper.rb
+badd +6 app/helpers/application_helper.rb
+badd +5 README
+badd +13 example_user.rb
+badd +114 app/assets/stylesheets/custom.css
+badd +9 app/views/layouts/_stylesheets.html.erb
+badd +10 app/views/layouts/_header.html.erb
+badd +9 app/views/layouts/_footer.html.erb
+badd +20 spec/requests/layout_links_spec.rb
 args README
-edit app/helpers/application_helper.rb
+edit ~/Dropbox/dev-ror/rails-notes.rb
 set splitbelow splitright
 set nosplitbelow
 set nosplitright
@@ -174,16 +180,9 @@ nnoremap <buffer> <silent> g] :exe      "stselect =RubyCursorIdentifier()
 nnoremap <buffer> <silent> g :exe        "stjump =RubyCursorIdentifier()"
 nnoremap <buffer> <silent>  :exe v:count1."stag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> ] :exe v:count1."stag =RubyCursorIdentifier()"
-let s:cpo_save=&cpo
-set cpo&vim
-nmap <buffer> gf <Plug>RailsTabFind
-nmap <buffer> f <Plug>RailsSplitFind
 nnoremap <buffer> <silent>  :exe  v:count1."tag =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g] :exe       "tselect =RubyCursorIdentifier()"
 nnoremap <buffer> <silent> g :exe         "tjump =RubyCursorIdentifier()"
-nmap <buffer> gf <Plug>RailsFind
-let &cpo=s:cpo_save
-unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
@@ -203,18 +202,18 @@ setlocal commentstring=#\ %s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
-setlocal completefunc=syntaxcomplete#Complete
+setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
 setlocal nocursorcolumn
 setlocal nocursorline
-setlocal define=^\\s*def\\s\\+\\(self\\.\\)\\=
+setlocal define=^\\s*#\\s*define
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
 setlocal errorformat=
-setlocal expandtab
+setlocal noexpandtab
 if &filetype != 'ruby'
 setlocal filetype=ruby
 endif
@@ -237,7 +236,7 @@ setlocal grepprg=
 setlocal iminsert=2
 setlocal imsearch=2
 setlocal include=^\\s*\\<\\(load\\|w*require\\)\\>
-setlocal includeexpr=RailsIncludeexpr()
+setlocal includeexpr=substitute(substitute(v:fname,'::','/','g'),'$','.rb','')
 setlocal indentexpr=GetRubyIndent()
 setlocal indentkeys=0{,0},0),0],!^F,o,O,e,=end,=elsif,=when,=ensure,=rescue,==begin,==end
 setlocal noinfercase
@@ -254,21 +253,21 @@ setlocal nrformats=octal,hex
 setlocal nonumber
 setlocal numberwidth=4
 setlocal omnifunc=rubycomplete#Complete
-setlocal path=.,~/Dropbox/dev-ror/learning_rails/sample_app,~/Dropbox/dev-ror/learning_rails/sample_app/app,~/Dropbox/dev-ror/learning_rails/sample_app/app/models,~/Dropbox/dev-ror/learning_rails/sample_app/app/controllers,~/Dropbox/dev-ror/learning_rails/sample_app/app/helpers,~/Dropbox/dev-ror/learning_rails/sample_app/config,~/Dropbox/dev-ror/learning_rails/sample_app/lib,~/Dropbox/dev-ror/learning_rails/sample_app/app/views,~/Dropbox/dev-ror/learning_rails/sample_app/app/views/application,~/Dropbox/dev-ror/learning_rails/sample_app/public,~/Dropbox/dev-ror/learning_rails/sample_app/spec,~/Dropbox/dev-ror/learning_rails/sample_app/spec/models,~/Dropbox/dev-ror/learning_rails/sample_app/spec/controllers,~/Dropbox/dev-ror/learning_rails/sample_app/spec/helpers,~/Dropbox/dev-ror/learning_rails/sample_app/spec/views,~/Dropbox/dev-ror/learning_rails/sample_app/spec/lib,~/Dropbox/dev-ror/learning_rails/sample_app/spec/requests,~/Dropbox/dev-ror/learning_rails/sample_app/spec/integration,~/Dropbox/dev-ror/learning_rails/sample_app/app/*,~/Dropbox/dev-ror/learning_rails/sample_app/vendor,~/Dropbox/dev-ror/learning_rails/sample_app/vendor/plugins/*/lib,~/Dropbox/dev-ror/learning_rails/sample_app/vendor/plugins/*/test,~/Dropbox/dev-ror/learning_rails/sample_app/vendor/rails/*/lib,~/Dropbox/dev-ror/learning_rails/sample_app/vendor/rails/*/test,NOTE:\\\ Gem.all_load_paths\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_load_paths\\\ called\\\ from\\\ -e:1.\
-NOTE:\\\ Gem.all_partials\\\ is\\\ deprecated\\\ with\\\ no\\\ replacement.\\\ It\\\ will\\\ be\\\ removed\\\ on\\\ or\\\ after\\\ 2011-10-01.\
-Gem.all_partials\\\ called\\\ from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:258.\
-/usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:259:in\\\ `block\\\ (2\\\ levels)\\\ in\\\ all_load_paths':\\\ undefined\\\ method\\\ `add'\\\ for\\\ \"/usr/share/ruby-rvm/gems/ruby-1.9.2-head\":String\\\ (NoMethodError)\
-\	from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:427:in\\\ `block\\\ (2\\\ levels)\\\ in\\\ each_load_path'\
-\	from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:426:in\\\ `each'\
-\	from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:426:in\\\ `block\\\ in\\\ each_load_path'\
-\	from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:421:in\\\ `each'\
-\	from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:421:in\\\ `each_load_path'\
-\	from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:258:in\\\ `block\\\ in\\\ all_load_paths'\
-\	from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:257:in\\\ `each'\
-\	from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:257:in\\\ `all_load_paths'\
-\	from\\\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems/deprecate.rb:63:in\\\ `block\\\ (2\\\ levels)\\\ in\\\ deprecate'\
-\	from\\\ -e:1:in\\\ `<main>'\
+setlocal path=.,NOTE:\ Gem.all_load_paths\ is\ deprecated\ with\ no\ replacement.\ It\ will\ be\ removed\ on\ or\ after\ 2011-10-01.\
+Gem.all_load_paths\ called\ from\ -e:1.\
+NOTE:\ Gem.all_partials\ is\ deprecated\ with\ no\ replacement.\ It\ will\ be\ removed\ on\ or\ after\ 2011-10-01.\
+Gem.all_partials\ called\ from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:258.\
+/usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:259:in\ `block\ (2\ levels)\ in\ all_load_paths':\ undefined\ method\ `add'\ for\ \"/usr/share/ruby-rvm/gems/ruby-1.9.2-head\":String\ (NoMethodError)\
+\	from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:427:in\ `block\ (2\ levels)\ in\ each_load_path'\
+\	from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:426:in\ `each'\
+\	from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:426:in\ `block\ in\ each_load_path'\
+\	from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:421:in\ `each'\
+\	from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:421:in\ `each_load_path'\
+\	from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:258:in\ `block\ in\ all_load_paths'\
+\	from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:257:in\ `each'\
+\	from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems.rb:257:in\ `all_load_paths'\
+\	from\ /usr/share/ruby-rvm/rubies/ruby-1.9.2-head/lib/ruby/site_ruby/1.9.1/rubygems/deprecate.rb:63:in\ `block\ (2\ levels)\ in\ deprecate'\
+\	from\ -e:1:in\ `<main>'\
 
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -279,23 +278,23 @@ setlocal relativenumber
 setlocal norightleft
 setlocal rightleftcmd=search
 setlocal noscrollbind
-setlocal shiftwidth=2
+setlocal shiftwidth=3
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=2
+setlocal softtabstop=0
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
 setlocal statusline=
-setlocal suffixesadd=.rb,.rhtml,.erb,.rxml,.builder,.rjs,.mab,.liquid,.haml,.dryml,.mn,.slim
+setlocal suffixesadd=.rb
 setlocal swapfile
 setlocal synmaxcol=3000
 if &syntax != 'ruby'
 setlocal syntax=ruby
 endif
 setlocal tabstop=3
-setlocal tags=~/Dropbox/dev-ror/learning_rails/sample_app/tmp/tags,~/Dropbox/dev-ror/learning_rails/sample_app/.git/ruby.tags,~/Dropbox/dev-ror/learning_rails/sample_app/.git/tags,./tags,./TAGS,tags,TAGS,~/Dropbox/dev-ror/learning_rails/sample_app/tags
+setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
@@ -304,23 +303,11 @@ setlocal nowinfixwidth
 set nowrap
 setlocal nowrap
 setlocal wrapmargin=0
-4
-normal zo
-5
-normal zo
-7
-normal zo
-9
-normal zo
-5
-normal zo
-4
-normal zo
-let s:l = 6 - ((5 * winheight(0) + 21) / 43)
+let s:l = 255 - ((42 * winheight(0) + 21) / 43)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-6
+255
 normal! 0
 tabnext 1
 if exists('s:wipebuf')

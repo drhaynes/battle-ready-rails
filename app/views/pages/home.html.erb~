@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
-  </head>
-  <body>
-    <h1>Sample App</h1>
-    <p>
-      This is the homepage for the Rails tutorial sample app.
-    </p>
-  </body>
-</html>
+<h1>Sample App</h1>
+      <p>
+        This is the homepage for the Rails tutorial sample app.
+      </p>
+
+      <%= link_to "Sign up now!", '#', :class => "signup_button round" %>
 
