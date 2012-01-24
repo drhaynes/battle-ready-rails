@@ -10,12 +10,14 @@ gem 'thin'
 
 group :development do
   gem 'rspec-rails'
+  gem 'annotate', '~> 2.4.1.beta'
 end
 
 group :test do
   gem 'rspec'
-  gem 'webrat'
+  # gem 'webrat'
   gem 'spork', "> 0.9.0.rc"
+  gem 'capybara'
 end
 
 # Gems used only for assets and not required
