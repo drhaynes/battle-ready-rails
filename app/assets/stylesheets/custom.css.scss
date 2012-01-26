@@ -1,6 +1,7 @@
 $full-width: 710px;
-$background-color: #cff;
-$link-color: #09c;
+$background-color: #eee6d8;
+$section-color: #fdf7ec;
+$link-color: #cc3401;
 $visited-link-color: #069;
 
 .container {
@@ -23,7 +24,7 @@ section {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: white;
+  background: $section-color;
 
   h1 {
     font-size: 200%;
@@ -50,7 +51,7 @@ a {
 
 nav {
   float: right;
-  background-color: white;
+  background-color: $section-color;
   padding: 0 0.7em;
   white-space: nowrap;
 
@@ -87,7 +88,7 @@ a.signup_button {
   text-align: center;
   width: 190px;
   color: #fff;
-  background: #33a633;
+  background: #cc3401;
   font-size: 150%;
   font-weight: bold;
   padding: 20px;
