@@ -3,6 +3,7 @@ $background-color: #eee6d8;
 $section-color: #fdf7ec;
 $link-color: #cc3401;
 $visited-link-color: #069;
+$corner-radius: 10px;
 
 .container {
   width: $full-width;
@@ -51,7 +52,7 @@ a {
 
 nav {
   float: right;
-  background-color: white;
+  background-color: $section-color;
   padding: 0 0.7em;
   white-space: nowrap;
 
@@ -96,9 +97,9 @@ a.signup_button {
 
 /* Round corners */
 .round {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
+  -moz-border-radius: $corner-raduis;
+  -webkit-border-radius: $corner-radius;
+  border-radius: $corner-radius;
 }
 
 /* Footer */

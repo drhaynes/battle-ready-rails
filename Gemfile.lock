@@ -54,7 +54,13 @@ GEM
     eventmachine (0.12.10)
     execjs (1.2.13)
       multi_json (~> 1.0)
+    factory_girl (2.5.0)
+      activesupport
+    factory_girl_rails (1.6.0)
+      factory_girl (~> 2.5.0)
+      railties (>= 3.0.0)
     ffi (1.0.11)
+    gravatar_image_tag (1.0.0)
     hike (1.2.1)
     i18n (0.6.0)
     jquery-rails (1.0.19)
@@ -150,6 +156,8 @@ DEPENDENCIES
   annotate (~> 2.4.1.beta)
   capybara
   coffee-rails (~> 3.1.1)
+  factory_girl_rails
+  gravatar_image_tag
   jquery-rails
   pg
   rails (= 3.1.3)
