@@ -13,6 +13,8 @@ gem 'gravatar_image_tag'
 gem 'bcrypt-ruby', '3.0.1'
 
 group :development do
+  gem 'hpricot'
+  gem 'ruby_parser'
   gem 'rspec-rails'
   gem 'annotate', '~> 2.4.1.beta'
 end
