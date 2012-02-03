@@ -20,6 +20,9 @@ SampleApp::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Force all app access over SSL
+  config.force_ssl = true
+  
   # Blueprint CSS precompilation
   config.assets.precompile += %w( blueprint/screen.css blueprint/print.css blueprint/ie.css custom.css)
 
