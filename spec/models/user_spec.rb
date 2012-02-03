@@ -20,6 +20,16 @@ describe User do
     }
   end
 
+  before do
+    @user = User.new(@attr)
+  end
+
+  subject { @user }
+
+  it { should respond_to(:name) }
+  it { should respond_to(:email) }
+  it { should respond_to(:password_digest) }
+  
   it "should create a new instance given valid attributes" do
     User.create!(@attr)
   end
