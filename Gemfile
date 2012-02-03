@@ -9,6 +9,9 @@ gem 'pg', '0.12.2'
 gem 'thin'
 gem 'gravatar_image_tag'
 
+# required for has_secure_password
+gem 'bcrypt-ruby', '3.0.1'
+
 group :development do
   gem 'rspec-rails'
   gem 'annotate', '~> 2.4.1.beta'
