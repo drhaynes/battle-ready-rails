@@ -12,6 +12,8 @@ gem 'gravatar_image_tag'
 # required for has_secure_password
 gem 'bcrypt-ruby', '3.0.1'
 
+gem 'haml'
+
 group :development do
   gem 'hpricot'
   gem 'ruby_parser'
