@@ -1,0 +1,7 @@
+- provide(:title, 'Sign in')
+%h1 Sign in
+
+= form_for :session, :url => sessions_path do |f|
+  .field
+    = f.label :email
+    = f.text_field :email
