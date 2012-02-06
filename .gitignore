@@ -25,3 +25,6 @@ doc/
 .project
 .DS_Store
 
+# Ignore all files created from a local single-user bundle install
+/heroku
+
