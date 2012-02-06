@@ -45,6 +45,7 @@ describe "UserPages" do
 
         it { should have_selector('title', text: user.name) }
         it { should have_selector('div.flash.success', text: 'New user') }
+        it { should have_link('Sign out') }
       end
     end
 
