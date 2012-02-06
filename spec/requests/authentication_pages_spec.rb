@@ -19,6 +19,11 @@ describe "AuthenticationPages" do
 
       it { should have_selector('title', text: 'Sign in') }
       it { should have_selector('div.flash.error', text: 'Invalid') }
+
+      describe "after visiting another page" do
+        before { click_link "Home" }
+        it { should_not have_selector('div.flash.error') }
+      end
     end
 
     describe "with valid information" do
