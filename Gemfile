@@ -23,10 +23,11 @@ end
 
 group :test do
   gem 'rspec'
-  # gem 'webrat'
   gem 'spork', "> 0.9.0.rc"
   gem 'capybara'
   gem 'factory_girl_rails'
+  gem 'cucumber-rails', '1.2.1'
+  gem 'database_cleaner', '0.7.0'
 end
 
 # Gems used only for assets and not required
