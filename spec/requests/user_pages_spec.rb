@@ -58,4 +58,22 @@ describe "UserPages" do
       it { should have_content(error_text) }
     end
   end
+
+  describe "edit" do
+    let(:user) { FactoryGirl.create(:user) }
+    before { visit edit_user_path(user) }
+
+    describe "page" do
+      it { should have_selector('h1', text: "Edit user") }
+      it { should have_selector('title', text: "Edit user") }
+      it { should have_link('change', href: 'http://gravatar.com/emails') }
+    end
+
+    describe "with invalid information" do
+      let(:error) { '1 error prohibited this user from being saved' }
+      before { click_button "Update" }
+
+      it { should have_content(error) }
+    end
+  end
 end
