@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "UserPages" do
+describe "User Pages:" do
   subject { page }
   describe "signup page" do
     before { visit signup_path }
@@ -61,7 +61,10 @@ describe "UserPages" do
 
   describe "edit" do
     let(:user) { FactoryGirl.create(:user) }
-    before { visit edit_user_path(user) }
+    before do
+      sign_in_user
+      visit edit_user_path(user)
+    end
 
     describe "page" do
       it { should have_selector('h1', text: "Edit user") }

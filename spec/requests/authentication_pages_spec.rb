@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "AuthenticationPages" do
+describe "Authentication Pages:" do
 
   subject { page }
 

@@ -18,3 +18,12 @@ RSpec::Matchers.define :have_error_message do |msg|
     page.should have_selector('div.flash.error', text: msg)
   end
 end
+
+def sign_in(user)
+  visit signin_path
+  fill_in "Email", with: user.email
+  fill_in "Password", with: user.password
+  click_button "Sign in"
+  # Sign in when not using Capybara also
+  # How does this need to work now that we are using session?
+end
