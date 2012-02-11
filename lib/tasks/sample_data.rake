@@ -4,7 +4,7 @@ namespace :db do
     Rake::Task['db:reset'].invoke
     User.create!(name: "Example User",
                  email: "example@railstutorial.org",
-                 password: foobar,
+                 password: "foobar",
                  password_confirmation: "foobar")
     99.times do |n|
       name = Faker::Name.name
