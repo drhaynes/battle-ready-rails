@@ -14,6 +14,9 @@ gem 'bcrypt-ruby', '3.0.1'
 
 gem 'haml'
 
+# For generating sample/test users
+gem 'faker', '1.0.1'
+
 group :development do
   gem 'hpricot'
   gem 'ruby_parser'
