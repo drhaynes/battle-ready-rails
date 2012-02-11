@@ -68,6 +68,11 @@ describe "Authentication Pages:" do
         before { put user_path(user) }
         specify { response.should redirect_to(signin_path) }
       end
+
+      describe "visiting user index" do
+        before { visit users_path }
+        it { should have_selector('title', text: 'Sign in') }
+      end
     end
 
     describe "as wrong user" do
