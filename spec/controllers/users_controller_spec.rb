@@ -33,4 +33,14 @@ describe UsersController do
       page.should have_selector("title", :content => "Sign up")
     end
   end
+
+  # TODO: implement a test for the correct signed in user for edit action
+  #       using the session[:user] value
+  # Along the lines of this:
+  # describe "GET 'edit'" do
+   # it "should redirect to homepage if wrong user tries to access" do
+   #    before { visit user_path(wrong_user) }
+   #    specify { response.should redirect_to(root_path) }
+   # end
+  # end
 end
