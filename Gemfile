@@ -8,6 +8,7 @@ gem 'rails', '3.2.1'
 gem 'pg', '0.12.2'
 gem 'thin'
 gem 'gravatar_image_tag'
+gem 'will_paginate', '3.0.2'
 
 # required for has_secure_password
 gem 'bcrypt-ruby', '3.0.1'
