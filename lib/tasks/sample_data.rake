@@ -4,7 +4,7 @@ namespace :db do
     Rake::Task['db:reset'].invoke
 
     # Create the first user, and make them an admin
-    User.create!(name: "Example User",
+    admin = User.create!(name: "Example User",
                  email: "example@railstutorial.org",
                  password: "foobar",
                  password_confirmation: "foobar")
