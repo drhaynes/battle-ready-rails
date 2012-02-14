@@ -43,7 +43,7 @@ In a Nutshell:
  
 * Fork from Git repo
 * Setup pg locally for development
-* Setup & deploy to Heoku
+* Setup & deploy to Heroku
 
 More detail to be added to this section at a later date.
 
