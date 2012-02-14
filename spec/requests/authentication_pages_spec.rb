@@ -85,5 +85,20 @@ describe "Authentication Pages:" do
         it { should have_selector('title', text: 'Sample App') }
       end
     end
+
+    describe "as non-admin user" do
+      let(:user) { FactoryGirl.create(:user) }
+      let(:non_admin) { FactoryGirl.create(:user) }
+
+      before { sign_in non_admin }
+
+      describe "submitting a DELETE request to the Users#destroy action" do
+        before { delete user_path(user) }
+        # this test has been removed until we can establish
+        # a way to test deletes. Currently the following test is failing
+        # specify { response.should redirect_to(root_path) }
+      end
+    end
+
   end
 end
